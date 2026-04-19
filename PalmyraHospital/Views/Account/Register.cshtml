@@ -1,0 +1,72 @@
+﻿@using PalmyraHospital.Web.ViewModels.Account;
+@model RegisterViewModel;
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="luxury-login-wrapper">
+
+    <div class="luxury-overlay"></div>
+
+    <div class="luxury-login-card">
+
+        <div class="luxury-brand text-center mb-4">
+            <i class="fas fa-user-plus luxury-icon"></i>
+            <h2>Create Account</h2>
+            <p>Join Universal Hospitals System</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="luxury-label"></label>
+                <input asp-for="Name" class="form-control luxury-input" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="luxury-label"></label>
+                <input asp-for="Email" class="form-control luxury-input" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="luxury-label"></label>
+                <input asp-for="Password" class="form-control luxury-input" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="ConfirmPassword" class="luxury-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control luxury-input" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit"
+                    class="btn luxury-btn w-100">
+                Create Account
+            </button>
+
+            <div class="text-center mt-3">
+                <span class="text-light">Already have an account?</span>
+                <a asp-controller="Account"
+                   asp-action="Login"
+                   class="luxury-link">
+                    Sign In
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}

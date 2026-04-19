@@ -1,0 +1,43 @@
+C:\Users\HP\source\repos\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.deps.json
+C:\Users\HP\source\repos\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.runtimeconfig.json
+C:\Users\HP\source\repos\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfo.cs
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\refint\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.genruntimeconfig.cache
+C:\Users\HP\source\repos\PalmyraHospital.Domain\obj\Debug\net8.0\ref\PalmyraHospital.Domain.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.deps.json
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.runtimeconfig.json
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.AssemblyReference.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfoInputs.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfo.cs
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.CoreCompileInputs.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\refint\PalmyraHospital.Domain.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.genruntimeconfig.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\ref\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.deps.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.runtimeconfig.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.AssemblyInfo.cs
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.sourcelink.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\refint\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\PalmyraHospital.Domain.genruntimeconfig.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Domain\obj\Debug\net8.0\ref\PalmyraHospital.Domain.dll

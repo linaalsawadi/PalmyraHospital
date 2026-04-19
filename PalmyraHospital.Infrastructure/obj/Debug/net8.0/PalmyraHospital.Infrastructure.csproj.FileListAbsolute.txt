@@ -1,0 +1,58 @@
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.deps.json
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.runtimeconfig.json
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.dll
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfo.cs
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraH.4C43EA87.Up2Date
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\refint\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.genruntimeconfig.cache
+C:\Users\HP\source\repos\PalmyraHospital.Infrastructure\obj\Debug\net8.0\ref\PalmyraHospital.Infrastructure.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.deps.json
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.runtimeconfig.json
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.AssemblyReference.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfoInputs.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfo.cs
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraH.4C43EA87.Up2Date
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\refint\PalmyraHospital.Infrastructure.dll
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.genruntimeconfig.cache
+D:\Siber Güvenlik\2.donem\PalmyraHospitalProject\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\ref\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.deps.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.runtimeconfig.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Application.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\bin\Debug\net8.0\PalmyraHospital.Domain.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.AssemblyInfo.cs
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.sourcelink.json
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraH.4C43EA87.Up2Date
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\refint\PalmyraHospital.Infrastructure.dll
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.pdb
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\PalmyraHospital.Infrastructure.genruntimeconfig.cache
+C:\Users\HP\source\repos\PalmyraHospital\PalmyraHospital.Infrastructure\obj\Debug\net8.0\ref\PalmyraHospital.Infrastructure.dll

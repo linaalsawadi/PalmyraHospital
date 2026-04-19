@@ -1,0 +1,55 @@
+﻿@using PalmyraHospital.Web.ViewModels.Account;
+@model VerifyEmailViewModel;
+
+@{
+    ViewData["Title"] = "Verify Email";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="luxury-login-wrapper">
+
+    <div class="luxury-login-card">
+
+        <div class="luxury-brand text-center mb-4">
+            <i class="fas fa-envelope-open-text luxury-icon"></i>
+            <h2>Email Verification</h2>
+            <p>Secure Identity Confirmation</p>
+        </div>
+
+        <form asp-action="VerifyEmail" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger mb-3"></div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Email" class="luxury-label"></label>
+                <input asp-for="Email"
+                       class="form-control luxury-input"
+                       placeholder="Enter your registered email" />
+                <span asp-validation-for="Email"
+                      class="text-danger"></span>
+            </div>
+
+            <button type="submit"
+                    class="btn luxury-btn w-100">
+                Verify Email
+            </button>
+
+            <div class="text-center mt-4">
+                <a asp-controller="Account"
+                   asp-action="Login"
+                   class="luxury-link">
+                    ← Back to Sign In
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
