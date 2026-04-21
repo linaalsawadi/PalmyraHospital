@@ -3,8 +3,6 @@ using PalmyraHospital.Application.DTOs.Admin;
 using PalmyraHospital.Application.Interfaces.Admin;
 using PalmyraHospital.Infrastructure.Data;
 
-namespace PalmyraHospital.Infrastructure.Services.Admin;
-
 public class AdminDashboardService : IAdminDashboardService
 {
     private readonly ApplicationDbContext _context;

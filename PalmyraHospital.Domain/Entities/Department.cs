@@ -23,9 +23,20 @@ namespace PalmyraHospital.Domain.Entities
 
         public Department(string name, string? description)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Department name is required");
+
             Name = name;
             Description = description;
             CreatedAt = DateTime.UtcNow;
+        }
+        public void Update(string name, string? description)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Name is required");
+
+            Name = name;
+            Description = description;
         }
     }
 }

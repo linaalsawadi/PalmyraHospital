@@ -11,6 +11,7 @@ using PalmyraHospital.Application.Implementations;
 using PalmyraHospital.Application.Interfaces.Redirect;
 using PalmyraHospital.Infrastructure.Services.Admin;
 using PalmyraHospital.Application.Interfaces.Admin;
+using PalmyraHospital.Infrastructure.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -44,9 +45,11 @@ builder.Services.AddScoped<IUserSeeder, UserSeeder>();
 builder.Services.AddScoped<ISeedOrchestrator, SeedOrchestrator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserRedirectService, UserRedirectService>();
-builder.Services.AddScoped<IAdminDashboardService, AdminDashboardService>();
-
-
+builder.Services.AddScoped<IAdminDashboardService, AdminDashboardService>(); 
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
@@ -72,6 +75,10 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

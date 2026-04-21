@@ -1,0 +1,95 @@
+﻿@using PalmyraHospital.Web.ViewModels.Admin.Department
+@model EditDepartmentViewModel
+
+@{
+    ViewData["Title"] = "Edit Department";
+}
+
+<section class="content">
+
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+                <h4 class="mb-1">Edit Department</h4>
+                <small class="text-muted">Update department information</small>
+            </div>
+
+            <a asp-area="Admin"
+               asp-controller="Department"
+               asp-action="Index"
+               class="btn btn-light border btn-sm">
+                ← Back
+            </a>
+
+        </div>
+
+        <!-- Card -->
+        <div class="card shadow-sm border">
+
+            <div class="card-body">
+
+                <form asp-area="Admin"
+                      asp-controller="Department"
+                      asp-action="Edit"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" asp-for="Id" />
+
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <!-- Name -->
+                    <div class="mb-3">
+                        <label class="form-label">Department Name</label>
+                        <input asp-for="Name"
+                               class="form-control"
+                               placeholder="Department name" />
+
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <label class="form-label">Description</label>
+                        <textarea asp-for="Description"
+                                  class="form-control"
+                                  rows="3"
+                                  placeholder="Optional description"></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-end">
+
+                        <a asp-area="Admin"
+                           asp-controller="Department"
+                           asp-action="Index"
+                           class="btn btn-light border me-2">
+                            Cancel
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Update
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

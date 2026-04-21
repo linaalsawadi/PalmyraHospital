@@ -1,0 +1,23 @@
+﻿@using PalmyraHospital.Web.ViewModels.Admin.Department
+@model CreateDepartmentViewModel
+
+<h3>Create Department</h3>
+
+<form asp-action="Create" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <input asp-for="Name" class="form-control" placeholder="Department Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <input asp-for="Description" class="form-control" placeholder="Description" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>
