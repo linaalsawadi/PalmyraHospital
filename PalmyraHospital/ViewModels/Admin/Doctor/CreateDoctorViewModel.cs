@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PalmyraHospital.Web.ViewModels.Admin
+namespace PalmyraHospital.Web.ViewModels.Admin.Doctor
 {
     public class CreateDoctorViewModel
     {
@@ -27,20 +27,20 @@ namespace PalmyraHospital.Web.ViewModels.Admin
         [StringLength(50)]
         public string LicenseNumber { get; set; } = default!;
 
-        [Required]
-        [RegularExpression(@"^05\d{8}$", ErrorMessage = "Phone must start with 05 and contain 10 digits")]
+        //[Required]
+        //[RegularExpression(@"^05\d{9}$", ErrorMessage = "Phone must start with 05 and contain 10 digits")]
         public string PhoneNumber { get; set; } = default!;
 
         [Required]
-        public int DepartmentId { get; set; }
+        public int? DepartmentId { get; set; }
 
         [Required]
-        public int SpecializationId { get; set; }
+        public int? SpecializationId { get; set; }
 
         [Range(0, 80)]
         public int YearsOfExperience { get; set; }
 
-        [Range(0, 999999)]
+        [Range(0, 1000000)]
         public decimal ConsultationFee { get; set; }
 
         // For dropdowns

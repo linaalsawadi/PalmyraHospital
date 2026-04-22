@@ -1,4 +1,5 @@
-﻿@model PalmyraHospital.Web.ViewModels.Admin.CreateDoctorViewModel
+﻿@using PalmyraHospital.Web.ViewModels.Admin.Doctor
+@model CreateDoctorViewModel
 
 <div class="container-fluid">
 
@@ -13,7 +14,10 @@
     <div class="card border">
         <div class="card-body">
 
-            <form asp-action="Create" method="post">
+            <form asp-area="Admin"
+                  asp-controller="Doctor"
+                  asp-action="Create"
+                  method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="text-danger mb-3" asp-validation-summary="All"></div>
@@ -56,29 +60,44 @@
                         <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label class="text-muted small">Department</label>
-                        <select asp-for="DepartmentId" class="form-control">
-                            <option value="">Select Department</option>
-                            @foreach (var d in Model.Departments)
-                            {
-                                <option value="@d.Id">@d.Name</option>
-                            }
-                        </select>
-                        <span asp-validation-for="DepartmentId" class="text-danger small"></span>
-                    </div>
+                   
 
-                    <div class="col-md-6 mb-3">
-                        <label class="text-muted small">Specialization</label>
-                        <select asp-for="SpecializationId" class="form-control">
-                            <option value="">Select Specialization</option>
-                            @foreach (var s in Model.Specializations)
-                            {
-                                <option value="@s.Id">@s.Name</option>
-                            }
-                        </select>
-                        <span asp-validation-for="SpecializationId" class="text-danger small"></span>
-                    </div>
+
+                        <!-- Department -->
+                        <div class="col-md-6 mb-3">
+                            <label class="text-muted small">Department</label>
+
+                            <select asp-for="DepartmentId"
+                                    id="departmentDropdown"
+                                    class="form-control">
+
+                                <option value="">Select Department</option>
+
+                                @foreach (var d in Model.Departments)
+                                {
+                                    <option value="@d.Id">@d.Name</option>
+                                }
+                            </select>
+
+                            <span asp-validation-for="DepartmentId" class="text-danger small"></span>
+                        </div>
+
+
+                        <!-- Specialization -->
+                        <div class="col-md-6 mb-3">
+                            <label class="text-muted small">Specialization</label>
+
+                            <select asp-for="SpecializationId"
+                                    id="specializationDropdown"
+                                    class="form-control"
+                                    disabled>
+
+                                <option value="">Select Specialization</option>
+                            </select>
+
+                            <span asp-validation-for="SpecializationId" class="text-danger small"></span>
+                        </div>
+
 
                     <div class="col-md-6 mb-3">
                         <label class="text-muted small">Years of Experience</label>
@@ -106,3 +125,6 @@
     </div>
 
 </div>
+@section Scripts {
+    <script src="~/js/doctor.js"></script>
+}

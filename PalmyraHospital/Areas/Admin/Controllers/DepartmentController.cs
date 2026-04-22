@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PalmyraHospital.Application.Exceptions;
 using PalmyraHospital.Application.Interfaces.Admin;
 using PalmyraHospital.Web.ViewModels.Admin.Department;
 
@@ -48,14 +49,18 @@ public class DepartmentController : Controller
         {
             await _service.CreateAsync(model.Name, model.Description);
 
-            // ⭐ رسالة نجاح (اختياري)
             TempData["Success"] = "Department created successfully";
-
             return RedirectToAction(nameof(Index));
         }
-        catch (Exception ex)
+        catch (DuplicateDepartmentException ex)
         {
-            ModelState.AddModelError("", ex.Message);
+            // يظهر الخطأ تحت حقل الاسم
+            ModelState.AddModelError("Name", ex.Message);
+            return View(model);
+        }
+        catch (Exception)
+        {
+            ModelState.AddModelError("", "Something went wrong");
             return View(model);
         }
     }
@@ -96,12 +101,20 @@ public class DepartmentController : Controller
             await _service.UpdateAsync(model.Id, model.Name, model.Description);
 
             TempData["Success"] = "Department updated successfully";
-
             return RedirectToAction(nameof(Index));
         }
-        catch (Exception ex)
+        catch (DuplicateDepartmentException ex)
         {
-            ModelState.AddModelError("", ex.Message);
+            ModelState.AddModelError("Name", ex.Message);
+            return View(model);
+        }
+        catch (DepartmentNotFoundException)
+        {
+            return NotFound();
+        }
+        catch (Exception)
+        {
+            ModelState.AddModelError("", "Something went wrong");
             return View(model);
         }
     }
@@ -116,12 +129,15 @@ public class DepartmentController : Controller
         try
         {
             await _service.DeleteAsync(id);
-
             TempData["Success"] = "Department deleted successfully";
         }
-        catch (Exception ex)
+        catch (DepartmentNotFoundException)
         {
-            TempData["Error"] = ex.Message;
+            TempData["Error"] = "Department not found";
+        }
+        catch (Exception)
+        {
+            TempData["Error"] = "Something went wrong";
         }
 
         return RedirectToAction(nameof(Index));

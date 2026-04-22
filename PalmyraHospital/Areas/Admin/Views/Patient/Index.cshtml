@@ -1,5 +1,5 @@
-﻿@using PalmyraHospital.Domain.Entities
-@model IEnumerable<Patient>
+﻿@using PalmyraHospital.Application.DTOs.Admin
+@model IEnumerable<PatientDto>
 
 <section class="content">
 
@@ -13,7 +13,7 @@
                 <small class="text-muted">Registered patient records</small>
             </div>
 
-            <a href="#" class="btn btn-outline-primary btn-sm">
+            <a asp-action="Create" class="btn btn-outline-primary btn-sm">
                 Add Patient
             </a>
 
@@ -35,7 +35,7 @@
                             No patients registered
                         </p>
 
-                        <a href="#" class="btn btn-light border btn-sm">
+                        <a asp-action="Create" class="btn btn-light border btn-sm">
                             Register patient
                         </a>
 
@@ -71,11 +71,11 @@
                                 <tr>
 
                                     <td>
-                                        @patient.FirstName @patient.LastName
+                                        @patient.FullName
                                     </td>
 
                                     <td class="text-muted">
-                                        @patient.PhoneNumber
+                                        @patient.Phone
                                     </td>
 
                                     <td class="text-muted">
@@ -84,13 +84,22 @@
 
                                     <td class="text-right">
 
-                                        <a href="#" class="text-muted mr-3">
+                                        <a asp-action="Edit"
+                                           asp-route-id="@patient.Id"
+                                           class="text-muted me-3">
                                             Edit
                                         </a>
+                                        <form asp-action="Delete"
+                                              method="post"
+                                              class="d-inline">
 
-                                        <a href="#" class="text-danger">
-                                            Delete
-                                        </a>
+                                            <input type="hidden" name="id" value="@patient.Id" />
+
+                                            <button type="submit"
+                                                    class="text-danger border-0 bg-transparent">
+                                                Delete
+                                            </button>
+                                        </form>
 
                                     </td>
 

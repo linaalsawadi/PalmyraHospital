@@ -8,6 +8,7 @@ public interface IDepartmentService
 
     Task<DepartmentDto?> GetByIdAsync(int id);
     Task<DepartmentDto> GetForEditAsync(int id);
+
     Task CreateAsync(string name, string? description);
 
     Task UpdateAsync(int id, string name, string? description);

@@ -1,0 +1,37 @@
+﻿@{
+    var departments = ViewBag.Departments as List<(int Id, string Name)>;
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <h4>Create Specialization</h4>
+
+        <form asp-action="Create" method="post">
+
+            <div class="mb-3">
+                <label>Name</label>
+                <input name="name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label>Department</label>
+
+                <select name="departmentId" class="form-control">
+                    <option value="">Select Department</option>
+
+                    @foreach (var d in departments)
+                    {
+                        <option value="@d.Id">@d.Name</option>
+                    }
+                </select>
+            </div>
+
+            <button class="btn btn-success">Save</button>
+        </form>
+
+    </div>
+</section>
+@section Scripts {
+    <script src="~/js/doctor.js"></script>
+}

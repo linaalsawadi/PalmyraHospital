@@ -36,7 +36,7 @@ public class Doctor
 
     private Doctor() { }
 
-    // 🔥 Constructor واحد فقط (Correct)
+    //  Constructor واحد فقط (Correct)
     public Doctor(
         string userId,
         string doctorNumber,
@@ -109,7 +109,22 @@ public class Doctor
 
         YearsOfExperience = years;
     }
+    public void UpdateBasicInfo(string firstName, string lastName, string phone)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        PhoneNumber = phone;
+    }
 
+    public void ChangeDepartment(int departmentId)
+    {
+        DepartmentId = departmentId;
+    }
+
+    public void ChangeSpecialization(int specializationId)
+    {
+        SpecializationId = specializationId;
+    }
     public void Archive()
     {
         IsArchived = true;

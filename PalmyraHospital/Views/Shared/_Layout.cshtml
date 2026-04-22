@@ -96,10 +96,12 @@
 
                         <!-- Dashboard -->
                         <li class="nav-item">
-                            <a asp-controller="Admin"
+                            <a asp-area="Admin"
+                               asp-controller="Admin"
                                asp-action="Index"
-                               class="nav-link @(ViewContext.RouteData.Values["Action"]?.ToString()=="Index"?"active":"")">
-                                <i class="nav-icon fas fa-home"></i>
+                               class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString()=="Admin" ? "active" : "")">
+
+                                <i class="nav-icon fas fa-chart-line"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
@@ -130,9 +132,12 @@
 
                                     <!-- Dashboard -->
                                     <li class="nav-item">
-                                        <a asp-controller="Admin"
+                                        <a asp-area="Admin"
+                                           asp-controller="Admin"
                                            asp-action="Index"
-                                           class="nav-link @(ViewContext.RouteData.Values["Action"]?.ToString()=="Privacy"?"active":"")">                                            <i class="nav-icon fas fa-chart-line"></i>
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Admin" ? "active" : "")">
+
+                                            <i class="nav-icon fas fa-chart-line"></i>
                                             <p>Dashboard</p>
                                         </a>
                                     </li>
@@ -142,40 +147,60 @@
                                         <a asp-area="Admin"
                                            asp-controller="Department"
                                            asp-action="Index"
-                                           class="nav-link">
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Department" ? "active" : "")">
 
                                             <i class="nav-icon fas fa-hospital"></i>
                                             <p>Departments</p>
-
                                         </a>
                                     </li>
 
+                                    <!-- Specializations -->
+                                    <li class="nav-item">
+                                        <a asp-area="Admin"
+                                           asp-controller="Specialization"
+                                           asp-action="Index"
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Specialization" ? "active" : "")">
+
+                                            <i class="nav-icon fas fa-stethoscope"></i>
+                                            <p>Specializations</p>
+                                        </a>
+                                    </li>
+
+                                    <!-- Doctors -->
                                     <li class="nav-item">
                                         <a asp-area="Admin"
                                            asp-controller="Doctor"
                                            asp-action="Index"
-                                           class="nav-link">
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Doctor" ? "active" : "")">
+
                                             <i class="nav-icon fas fa-user-md"></i>
                                             <p>Doctors</p>
                                         </a>
                                     </li>
 
-
-
+                                    <!-- Patients -->
                                     <li class="nav-item">
-                                        <a asp-controller="Admin" asp-action="Patients" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
+                                        <a asp-area="Admin"
+                                           asp-controller="Patient"
+                                           asp-action="Index"
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Patient" ? "active" : "")">
+
+                                            <i class="nav-icon fas fa-users"></i>
                                             <p>Patients</p>
                                         </a>
                                     </li>
 
+                                    <!-- Appointments -->
                                     <li class="nav-item">
-                                        <a asp-controller="Admin" asp-action="Appointments" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
+                                        <a asp-area="Admin"
+                                           asp-controller="Appointment"
+                                           asp-action="Index"
+                                           class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Appointment" ? "active" : "")">
+
+                                            <i class="nav-icon fas fa-calendar-alt"></i>
                                             <p>Appointments</p>
                                         </a>
                                     </li>
-
                                 </ul>
                             </li>
 

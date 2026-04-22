@@ -1,0 +1,39 @@
+﻿@model PalmyraHospital.Application.DTOs.Admin.SpecializationDto
+
+@{
+    var departments = ViewBag.Departments as List<(int Id, string Name)>;
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <h4>Edit Specialization</h4>
+
+        <form asp-action="Edit" method="post">
+
+            <input type="hidden" name="id" value="@Model.Id" />
+
+            <div class="mb-3">
+                <label>Name</label>
+                <input name="name" value="@Model.Name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label>Department</label>
+
+                <select name="departmentId" class="form-control">
+                    @foreach (var d in departments)
+                    {
+                        <option value="@d.Id"
+                                selected="@(d.Id == Model.DepartmentId)">
+                            @d.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <button class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+</section>

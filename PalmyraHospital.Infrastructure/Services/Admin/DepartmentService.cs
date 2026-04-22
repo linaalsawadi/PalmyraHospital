@@ -1,6 +1,7 @@
 ﻿using PalmyraHospital.Application.DTOs.Admin;
 using PalmyraHospital.Application.Interfaces.Admin;
 using PalmyraHospital.Domain.Entities;
+using PalmyraHospital.Application.Exceptions;
 
 namespace PalmyraHospital.Infrastructure.Services.Admin;
 
@@ -67,7 +68,7 @@ public class DepartmentService : IDepartmentService
     public async Task CreateAsync(string name, string? description)
     {
         if (await _repo.ExistsByNameAsync(name))
-            throw new Exception("Department already exists");
+            throw new DuplicateDepartmentException();
 
         var department = new Department(name, description);
 
@@ -82,10 +83,10 @@ public class DepartmentService : IDepartmentService
         var department = await _repo.GetByIdAsync(id);
 
         if (department == null)
-            throw new Exception("Department not found");
+            throw new DepartmentNotFoundException();
 
         if (await _repo.ExistsByNameAsync(name))
-            throw new Exception("Department name already exists");
+            throw new DuplicateDepartmentException();
 
         department.Update(name, description);
 
@@ -100,7 +101,7 @@ public class DepartmentService : IDepartmentService
         var department = await _repo.GetByIdAsync(id);
 
         if (department == null)
-            throw new Exception("Department not found");
+            throw new DepartmentNotFoundException();
 
         await _repo.DeleteAsync(department);
     }

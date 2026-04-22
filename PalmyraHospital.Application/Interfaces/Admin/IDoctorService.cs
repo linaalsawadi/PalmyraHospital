@@ -10,22 +10,22 @@ public interface IDoctorService
     Task<List<DoctorDto>> GetAllAsync();
 
     Task<DoctorDto?> GetByIdAsync(int id);
-
-    // =========================
-    // CREATE
-    // =========================
-    Task CreateAsync(
-        string email,
-        string password,
+    Task<DoctorDto> GetForEditAsync(int id);
+    Task UpdateAsync(
+        int id,
         string firstName,
         string lastName,
-        string licenseNumber,
         string phone,
-        int departmentId,
-        int specializationId,
+        int ?departmentId,
+        int ?specializationId,
         int years,
         decimal fee
     );
+    // =========================
+    // CREATE
+    // =========================
+    Task CreateAsync(string email, string password, string firstName, string lastName, string licenseNumber, string phoneNumber, int? departmentId, int? specializationId, int yearsOfExperience, decimal consultationFee);
+
 
     // =========================
     // DELETE

@@ -27,6 +27,10 @@
     <ProjectReference Include="..\PalmyraHospital.Infrastructure\PalmyraHospital.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Admin\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://acp-protocol.dev/schemas/v1/attempts.schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

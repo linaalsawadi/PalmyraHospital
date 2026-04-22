@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PalmyraHospital.Infrastructure.Data;
 using PalmyraHospital.Infrastructure.Identity;
@@ -50,6 +50,11 @@ builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<ILookupService, LookupService>();
+builder.Services.AddScoped<ISpecializationService, SpecializationService>();
+builder.Services.AddScoped<ISpecializationRepository, SpecializationRepository>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
@@ -76,12 +81,19 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// 🔥 Route خاص بالـ Areas (مهم جدًا)
 app.MapControllerRoute(
     name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
 
+// 🔥 Route مباشر لـ /Admin
+app.MapControllerRoute(
+    name: "admin-root",
+    pattern: "Admin",
+    defaults: new { area = "Admin", controller = "Admin", action = "Index" });
+
+// 🔥 Default Route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();
