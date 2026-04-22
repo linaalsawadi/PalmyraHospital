@@ -93,12 +93,18 @@
                                               method="post"
                                               class="d-inline">
 
-                                            <input type="hidden" name="id" value="@patient.Id" />
+                                            @Html.AntiForgeryToken()
+
+                                            <input type="hidden"
+                                                   name="id"
+                                                   value="@patient.Id" />
 
                                             <button type="submit"
-                                                    class="text-danger border-0 bg-transparent">
+                                                    class="text-danger border-0 bg-transparent"
+                                                    onclick="return confirm('Are you sure you want to delete this patient?')">
                                                 Delete
                                             </button>
+
                                         </form>
 
                                     </td>

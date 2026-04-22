@@ -1,61 +1,54 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PalmyraHospital.Application.DTOs.Admin;
-using PalmyraHospital.Application.Exceptions;
-using PalmyraHospital.Application.Interfaces;
-using PalmyraHospital.Domain.Entities;
-using PalmyraHospital.Infrastructure.Data;
+﻿using PalmyraHospital.Domain.Entities;
 
 public class PatientService : IPatientService
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IPatientRepository _repo;
 
-    public PatientService(ApplicationDbContext context)
+    public PatientService(IPatientRepository repo)
     {
-        _context = context;
+        _repo = repo;
     }
 
     public async Task<List<PatientDto>> GetAllAsync()
     {
-        return await _context.Patients
-            .Select(p => new PatientDto
-            {
-                Id = p.Id,
-                FullName = p.FirstName + " " + p.LastName,
-                Phone = p.PhoneNumber,
-                DateOfBirth = p.DateOfBirth
-            })
-            .ToListAsync();
+        var patients = await _repo.GetAllAsync();
+
+        return patients.Select(p => new PatientDto
+        {
+            Id = p.Id,
+            FullName = p.GetFullName(),
+            Phone = p.PhoneNumber,
+            DateOfBirth = p.DateOfBirth
+        }).ToList();
     }
 
     public async Task<PatientDto?> GetByIdAsync(int id)
     {
-        var p = await _context.Patients.FindAsync(id);
+        var p = await _repo.GetByIdAsync(id);
         if (p == null) return null;
 
         return new PatientDto
         {
             Id = p.Id,
-            FullName = p.FirstName + " " + p.LastName,
-            Phone = p.PhoneNumber,
-            DateOfBirth = p.DateOfBirth
+            FullName = p.GetFullName(),
+            Phone = p.PhoneNumber
         };
     }
 
     public async Task CreateAsync(
-        string firstName,
-        string lastName,
+        string first,
+        string last,
         DateTime dob,
         string gender,
         string nationalId,
         string phone,
         string? address)
     {
-        // مبدئيًا بدون Identity (مثل ما عملنا في Doctor لاحقًا)
         var patient = new Patient(
             userId: Guid.NewGuid().ToString(),
             patientNumber: Guid.NewGuid().ToString(),
-            firstName,
-            lastName,
+            first,
+            last,
             dob,
             gender,
             nationalId,
@@ -63,26 +56,26 @@ public class PatientService : IPatientService
             address
         );
 
-        _context.Patients.Add(patient);
-        await _context.SaveChangesAsync();
+        await _repo.AddAsync(patient);
     }
 
     public async Task UpdateAsync(int id, string phone, string? address)
     {
-        var patient = await _context.Patients.FindAsync(id)
+        var patient = await _repo.GetByIdAsync(id)
             ?? throw new PatientNotFoundException();
 
         patient.UpdateContact(phone, address);
 
-        await _context.SaveChangesAsync();
+        await _repo.UpdateAsync(patient);
     }
 
     public async Task DeleteAsync(int id)
     {
-        var patient = await _context.Patients.FindAsync(id)
+        var patient = await _repo.GetByIdAsync(id)
             ?? throw new PatientNotFoundException();
 
-        patient.Archive(); // soft delete
-        await _context.SaveChangesAsync();
+        patient.Archive();
+
+        await _repo.UpdateAsync(patient);
     }
 }
