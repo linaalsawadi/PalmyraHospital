@@ -2,6 +2,8 @@
 using PalmyraHospital.Application.DTOs.Auth;
 using PalmyraHospital.Application.Interfaces.Auth;
 using PalmyraHospital.Infrastructure.Identity;
+using PalmyraHospital.Infrastructure.Logging.Abstractions;
+using PalmyraHospital.Infrastructure.Logging.Enums;
 
 namespace PalmyraHospital.Infrastructure.Services
 {
@@ -10,30 +12,62 @@ namespace PalmyraHospital.Infrastructure.Services
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ISecurityLogger _securityLogger;
 
         public AuthService(
             SignInManager<ApplicationUser> signInManager,
             UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+    ISecurityLogger securityLogger)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _securityLogger = securityLogger;
         }
 
         // ================= LOGIN =================
 
-        public async Task<(bool Success, string? Error)> LoginAsync(LoginRequest request)
+        public async Task<(bool Success, string? Error)> LoginAsync(
+    LoginRequest request)
         {
             var result = await _signInManager.PasswordSignInAsync(
                 request.Email,
                 request.Password,
                 request.RememberMe,
-                lockoutOnFailure: false);
+                lockoutOnFailure: true);
 
-            return result.Succeeded
-                ? (true, null)
-                : (false, "Invalid login attempt.");
+            var user = await _userManager.FindByEmailAsync(
+                request.Email);
+            if (result.IsLockedOut)
+            {
+                await _securityLogger.LogSecurityEventAsync(
+                    $"Account locked for {request.Email}",
+                    SecurityEventType.PermissionDenied,
+                    LogSeverity.Critical,
+                    userId: user?.Id);
+
+                return (false,
+                    "Account locked due to multiple failed attempts.");
+            }
+            if (result.Succeeded)
+            {
+                await _securityLogger.LogSecurityEventAsync(
+                    $"Successful login for {request.Email}",
+                    SecurityEventType.LoginSuccess,
+                    LogSeverity.Information,
+                    userId: user?.Id);
+
+                return (true, null);
+            }
+
+            await _securityLogger.LogSecurityEventAsync(
+                $"Failed login attempt for {request.Email}",
+                SecurityEventType.LoginFailed,
+                LogSeverity.Warning,
+                userId: user?.Id);
+
+            return (false, "Invalid login attempt.");
         }
 
         // ================= REGISTER =================

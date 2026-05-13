@@ -40,6 +40,12 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.SignIn.RequireConfirmedAccount = false;
     options.SignIn.RequireConfirmedEmail = false;
     options.SignIn.RequireConfirmedPhoneNumber = false;
+    options.Lockout.DefaultLockoutTimeSpan =
+    TimeSpan.FromMinutes(15);
+
+    options.Lockout.MaxFailedAccessAttempts = 5;
+
+    options.Lockout.AllowedForNewUsers = true;
 })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders(); 
