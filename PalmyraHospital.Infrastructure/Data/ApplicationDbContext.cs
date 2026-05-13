@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PalmyraHospital.Domain.Entities;
 using PalmyraHospital.Infrastructure.Identity;
+using PalmyraHospital.Infrastructure.Logging.Models;
 
 namespace PalmyraHospital.Infrastructure.Data
 {
@@ -18,6 +19,9 @@ namespace PalmyraHospital.Infrastructure.Data
         public DbSet<Appointment> Appointments => Set<Appointment>();
         public DbSet<Department> Departments => Set<Department>();
         public DbSet<Specialization> Specializations => Set<Specialization>();
+        public DbSet<SecurityLog> SecurityLogs => Set<SecurityLog>();
+        public DbSet<RequestTrace> RequestTraces => Set<RequestTrace>();
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)

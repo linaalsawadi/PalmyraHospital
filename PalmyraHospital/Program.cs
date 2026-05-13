@@ -12,10 +12,21 @@ using PalmyraHospital.Application.Interfaces.Redirect;
 using PalmyraHospital.Infrastructure.Services.Admin;
 using PalmyraHospital.Application.Interfaces.Admin;
 using PalmyraHospital.Infrastructure.Repositories;
+using PalmyraHospital.Infrastructure.Logging.Configurations;
+using PalmyraHospital.Infrastructure.Logging.Extensions;
+using Serilog;
+using PalmyraHospital.Infrastructure.Logging.Middleware;
+using PalmyraHospital.Infrastructure.Logging.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
+
+SerilogConfiguration.Configure(builder.Configuration);
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
@@ -55,6 +66,8 @@ builder.Services.AddScoped<ISpecializationService, SpecializationService>();
 builder.Services.AddScoped<ISpecializationRepository, SpecializationRepository>();
 builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+builder.Services.AddLoggingInfrastructure();
+
 
 
 var app = builder.Build();
@@ -75,10 +88,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
