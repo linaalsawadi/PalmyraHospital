@@ -1,4 +1,5 @@
-﻿@model CreatePatientViewModel
+﻿@using PalmyraHospital.Web.ViewModels.Admin.Patient
+@model CreatePatientViewModel
 
 <div class="container-fluid">
 
@@ -18,7 +19,10 @@
     <div class="card border">
         <div class="card-body">
 
-            <form asp-action="Create" method="post">
+            <form asp-area="Admin"
+                  asp-controller="Patient"
+                  asp-action="Create"
+                  method="post">
                 @Html.AntiForgeryToken()
 
                 <div asp-validation-summary="All" class="text-danger mb-3"></div>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using PalmyraHospital.Web.ViewModels.Admin.Patient;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PalmyraHospital.Application.Interfaces;
 
@@ -31,6 +32,7 @@ public class PatientController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(CreatePatientViewModel vm)
     {
+        
         if (!ModelState.IsValid)
             return View(vm);
 
@@ -49,9 +51,12 @@ public class PatientController : Controller
             TempData["Success"] = "Patient created successfully";
             return RedirectToAction(nameof(Index));
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            ModelState.AddModelError("", "Something went wrong");
+            var error = ex.InnerException?.Message ?? ex.Message;
+
+            ModelState.AddModelError("", error);
+
             return View(vm);
         }
     }

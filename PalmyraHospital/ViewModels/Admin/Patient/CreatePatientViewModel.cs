@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace PalmyraHospital.Web.ViewModels.Admin.Patient;
+using System.ComponentModel.DataAnnotations;
 
 public class CreatePatientViewModel
 {
