@@ -16,7 +16,6 @@ using PalmyraHospital.Infrastructure.Logging.Configurations;
 using PalmyraHospital.Infrastructure.Logging.Extensions;
 using Serilog;
 using PalmyraHospital.Infrastructure.Logging.Middleware;
-using PalmyraHospital.Infrastructure.Logging.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -75,7 +74,6 @@ builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddLoggingInfrastructure();
 
 
-
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
@@ -102,19 +100,19 @@ app.UseRouting();
 app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
-
-// 🔥 Route خاص بالـ Areas (مهم جدًا)
+app.UseMiddleware<SecurityMonitoringMiddleware>();
+//  Route خاص بالـ Areas (مهم جدًا)
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
 
-// 🔥 Route مباشر لـ /Admin
+//  Route مباشر لـ /Admin
 app.MapControllerRoute(
     name: "admin-root",
     pattern: "Admin",
     defaults: new { area = "Admin", controller = "Admin", action = "Index" });
 
-// 🔥 Default Route
+//  Default Route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
